@@ -4,6 +4,23 @@ tab fragment
 ### 使用方式
 
 ```
+       ArrayList<Fragment> fragments = new ArrayList<Fragment>() {
+            {
+                add(mainFragment);
+                add(viewFragment);
+                add(meFragment);
+
+            }
+        };
+        ArrayList<View> views = new ArrayList<View>() {
+            {
+                add(findViewById(R.id.tab_main));
+                add(findViewById(R.id.tab_view));
+                add(findViewById(R.id.tab_me));
+            }
+        };
+
+
        TabViewBuilder builder = new TabViewBuilder(getSupportFragmentManager());
         builder.setFragments(fragments)
                 .setTabViews(views)
