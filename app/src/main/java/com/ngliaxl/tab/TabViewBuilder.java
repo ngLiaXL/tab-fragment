@@ -72,11 +72,8 @@ public class TabViewBuilder {
         // for click
         for (int i = 0; i < tabViews.length; i++) {
             tabViews[i].setTag(i);
+            tabViews[i].setOnClickListener(mOnTabClickListener);
         }
-        for (View v : tabViews) {
-            v.setOnClickListener(mOnTabClickListener);
-        }
-
     }
 
     public void showFragmentWithIndex(int index) {
