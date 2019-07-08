@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white">
+
+
+    <LinearLayout
+            android:id="@+id/ll_tab_bottom"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+        <RelativeLayout
+                android:id="@+id/tab_main"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:tag="0">
+
+            <TextView
+                    android:textColor="@drawable/sel_txt_main_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="首页"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/tab_view"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:tag="1">
+
+            <TextView
+                    android:textColor="@drawable/sel_txt_main_tab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="浏览"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_weight="1"
+                android:id="@+id/tab_me"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:tag="2">
+
+            <TextView
+                    android:textColor="@drawable/sel_txt_main_tab"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="我的"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <RelativeLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_above="@id/ll_tab_bottom"
+            android:layout_height="match_parent"/>
+</RelativeLayout>
