@@ -44,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         };
 
         TabViewBuilder builder = new TabViewBuilder(getSupportFragmentManager());
-        builder.setFragments(fragments).setTabViews(views).setContainerLayoutId(R.id.fragment_container).build();
+        builder.setFragments(fragments)
+                .setTabViews(views)
+                .setContainerLayoutId(R.id.fragment_container);
         builder.build();
 
     }
