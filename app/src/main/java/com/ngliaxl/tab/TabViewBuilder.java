@@ -21,6 +21,8 @@ public class TabViewBuilder {
 
     private int defaultSelectedIndex = 0;
 
+    private boolean lazyCreateView;
+
     public TabViewBuilder(FragmentManager fm) {
         this.fragmentManager = fm;
     }
@@ -49,6 +51,10 @@ public class TabViewBuilder {
         return this;
     }
 
+    public TabViewBuilder setLazyCreateView(boolean lazyCreateView) {
+        this.lazyCreateView = lazyCreateView;
+        return this;
+    }
 
     public void build() {
         if (fragments == null || tabViews == null) {
@@ -62,9 +68,15 @@ public class TabViewBuilder {
             }
         }
 
-        for (Fragment fragment : fragments) {
-            tran.add(containerLayoutId, fragment, fragment.getClass().getSimpleName()).hide(fragment);
+        if (lazyCreateView) {
+            Fragment fragment = fragments[defaultSelectedIndex];
+            tran.add(containerLayoutId, fragment, fragment.getClass().getSimpleName());
+        } else {
+            for (Fragment fragment : fragments) {
+                tran.add(containerLayoutId, fragment, fragment.getClass().getSimpleName()).hide(fragment);
+            }
         }
+
 
         tran.show(fragments[defaultSelectedIndex]).commitAllowingStateLoss();
         tabViews[defaultSelectedIndex].setSelected(true);

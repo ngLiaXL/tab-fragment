@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         TabViewBuilder builder = new TabViewBuilder(getSupportFragmentManager());
         builder.setFragments(fragments)
                 .setTabViews(views)
+                .setLazyCreateView(true)
                 .setContainerLayoutId(R.id.fragment_container);
         builder.build();
 
