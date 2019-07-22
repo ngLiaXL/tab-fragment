@@ -5,6 +5,7 @@ import androidx.annotation.IdRes;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class TabViewBuilder {
     private View[] tabViews;
 
     private int currentIndex;
+    @NotNull
     private FragmentManager fragmentManager;
     @IdRes
     private int containerLayoutId;
@@ -23,7 +25,7 @@ public class TabViewBuilder {
 
     private boolean lazyCreateView;
 
-    public TabViewBuilder(FragmentManager fm) {
+    public TabViewBuilder(@NotNull FragmentManager fm) {
         this.fragmentManager = fm;
     }
 
